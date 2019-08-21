@@ -1,0 +1,17 @@
+[{
+	"name": "Efectivo",
+	"type": 0,
+	"image": "http://soloefectivo.com.ar/image.jpg"
+}, {
+	"name": "Visa",
+	"type": 1,
+	"image": "https://firebasestorage.googleapis.com/v0/b/comprameli-49a1b.appspot.com/o/images%2Fpayments%2Fvisa.png?alt=media&token=fed5389f-a966-4f22-82e9-0181784667a7"
+}, {
+	"name": "American Express",
+	"type": 1,
+	"image": "https://firebasestorage.googleapis.com/v0/b/comprameli-49a1b.appspot.com/o/images%2Fpayments%2Famex.png?alt=media&token=70c950b6-a60e-4bc3-85ee-fb8cb5d4b82b"
+}, {
+	"name": "Mastercard",
+	"type": 1,
+	"image": "https://firebasestorage.googleapis.com/v0/b/comprameli-49a1b.appspot.com/o/images%2Fpayments%2Fmastercard.png?alt=media&token=0deb3fdc-db7b-464a-9f0a-f7c4126808f6"
+}]
