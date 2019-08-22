@@ -5,8 +5,8 @@ var express = require('express'),
 	errorModel = require('./api/models/error'),
 	config = require('./config.json');
 
-var mysql = require('mysql');
-client = mysql.createConnection({
+client = require('mysql-promise')();
+client.configure({
   host     : config.database.host,
 	port		 : config.database.port,
   user     : config.database.user,
@@ -45,7 +45,6 @@ bootstrapApp = () => {
 const server = {
 	start: (onStart) => {
 		var app = bootstrapApp();
-		client.connect();
 		app.listen(port, () => onStart(port));
 	},
 	bootstrapApp
