@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "fabd5c5b-2d60-4d2e-abf2-7d0d4bb8bd8f",
+		"name": "NodeJsInit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:5000/payments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/payments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"transaction_id\": \"5\",\n  \t\t\"currency\": \"PESOS\",\n  \t\t\"value\": 123,\n  \t\t\"paymentMethod\": {\n    \t\t\"payment_method\": \"Visa\",\n\t\t\t\"expiration_date\": \"10/2019\",\n    \t\t\"card_number\": \"1234123412341234\",\n\t\t\t\"cardholder_name\": \"Damian Cassinotti\",\n\t\t\t\"security_code\": \"123\"\n  \t\t},\n\t\t\"status\": \"PENDIENTE\",\n    \t\"updateat\": \"2018-12-05T01:35:44.661Z\"\n\t}"
+				},
+				"url": {
+					"raw": "localhost:5000/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/payments/id/123 (Efectivo)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/payments/methods",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments",
+						"methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/payments/id/2 (Card)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/payments/id/5",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments",
+						"id",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/payments/methods",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/payments/methods",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments",
+						"methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/payments/id/123",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"123\",\n\t\"status\": \"enviando\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/payments/id/123",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"payments",
+						"id",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
