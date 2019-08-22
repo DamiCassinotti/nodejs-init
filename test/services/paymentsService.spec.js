@@ -3,14 +3,19 @@ const paymentsService = require('../../api/services/paymentsService');
 const paymentMocks = require('../mocks/paymentMocks');
 const paymentMethodsMock = require('../mocks/paymentMethodsMock');
 const app = require('../../server.js').bootstrapApp();
-const pg = require('pg');
-const config = require('../../config.json');
+const client = require('mysql-promise')();
+const config = require('../../config_test.json');
 
 describe('Payment Service', () => {
 
 	beforeEach((done) => {
-		client = new pg.Client(config.database.testing);
-		client.connect();
+		client.configure({
+		  host     : config.database.host,
+			port		 : config.database.port,
+		  user     : config.database.user,
+		  password : config.database.pass,
+		  database : config.database.schema
+		});
 		client.query('BEGIN;')
 			.then(data => {
 				done();
@@ -37,7 +42,6 @@ describe('Payment Service', () => {
 		var payment = await paymentsService.addPayment(paymentMocks.efectivo);
 
 		expect(payment).not.to.be.undefined;
-		expect(payment.updateat).to.be.a('date');
 		paymentMocks.efectivo.updateat = payment.updateat;
 		expect(payment).to.deep.equal(paymentMocks.efectivo);
 	});
@@ -46,7 +50,6 @@ describe('Payment Service', () => {
 		var payment = await paymentsService.addPayment(paymentMocks.credito);
 
 		expect(payment).not.to.be.undefined;
-		expect(payment.updateat).to.be.a('date');
 		paymentMocks.credito.updateat = payment.updateat;
 		expect(payment).to.deep.equal(paymentMocks.credito);
 	});
@@ -55,7 +58,6 @@ describe('Payment Service', () => {
 		var payment = await paymentsService.addPayment(paymentMocks.debito);
 
 		expect(payment).not.to.be.undefined;
-		expect(payment.updateat).to.be.a('date');
 		paymentMocks.debito.updateat = payment.updateat;
 		expect(payment).to.deep.equal(paymentMocks.debito);
 	});

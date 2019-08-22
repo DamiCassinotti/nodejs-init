@@ -2,7 +2,6 @@ const express = require('express');
 const paymentsController = require('../controllers/paymentsController');
 const paymentValidator = require('../validators/paymentValidator');
 const errorModel = require('../models/error');
-const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 

@@ -4,7 +4,8 @@
   "description": "Shared Server para Taller II",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "mocha \"test/**/*.spec.js\""
   },
   "author": "Damian Cassinotti",
   "license": "ISC",

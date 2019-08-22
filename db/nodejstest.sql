@@ -18,9 +18,9 @@ create table if not exists payment (
 	transaction_id varchar(50) primary key,
 	status varchar(30) default 'PENDIENTE' not null,
 	currency text not null,
-	value integer not null,
+	value varchar(50) not null,
 	payment_method text references payment_methods(name),
-	updateat timestamp default current_timestamp;
+	updateat timestamp default current_timestamp
 );
 
 create table if not exists payment_method (

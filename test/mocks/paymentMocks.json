@@ -26,7 +26,7 @@
 	"credito": {
 		"transaction_id": "123",
   		"currency": "PESOS",
-  		"value": 123,
+  		"value": "123",
   		"paymentMethod": {
     		"payment_method": "Visa",
 			"expiration_date": "10/2019",
